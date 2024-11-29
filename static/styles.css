@@ -9,6 +9,10 @@ h1 {
     font-size: 24px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+iframe {
+    width: auto;
+    height: auto;
+}
 #PI {
     display: inline-flex;
     font-family: Times, serif;
@@ -22,9 +26,17 @@ h1 {
     border: 1px solid rgb(133, 133, 133) ;
     box-shadow: 5px 6px 0px rgb(65, 65, 65);
 }
-p {
-    color: #9198a1;
+p, ol, ul {
+    color: #b1ceef;
     margin: 16px;
+    line-height: 2;
+}
+select {
+    color: #b1ceef;
+    margin: 16px;
+    background-color: #2b3037;
+    border: 0px;
+    font-size: 16px;
 }
 #copy_right {
     color: rgb(169, 169, 169);
@@ -34,6 +46,10 @@ p {
 a {
     color: rgb(80, 179, 250);
     text-decoration: none;
+}
+.water_mark {
+    margin-left: 60%;
+    padding: 2px;
 }
 hr {
     border-color: #3d444d;
@@ -67,4 +83,31 @@ hr {
     font-weight: 600;
     font-size: 16px;
     word-wrap: break-word;
+}
+.link_bubble {
+    background-color: #2b3037;
+    border-radius: 8px;
+    margin: 16px;
+    padding: 4px;
+}
+.link_bubble:hover {
+    background-color: #23272d;
+}
+.click_to_copy {
+    background-color: #23282f;
+    border-radius: 8px;
+    margin: 16px;
+    padding: 4px;
+    word-break: break-all;
+}
+.click_to_copy:hover {
+    background-color: #0b0c0d;
+}
+#program_box {
+    margin: 16px;
+    max-width: 500px;
+    border: #b1ceef solid 2px;
+    border-radius: 8px;
+    user-select: none;
+    -moz-user-select: none;
 }

@@ -1,0 +1,106 @@
+             <div id="program_box">
+                <div class="link_bubble">
+                    <p contenteditable="plaintext-only" spellcheck="false" name="array">9 8 7 6 5 4 3 2 1</p>
+                </div>
+                <div class="link_bubble">
+                    <select name="Sorting Type">
+                        <option value="A">Smallest to Greatest</option>
+                        <option value="B">Greatest to Smallest</option>
+                    </select>
+                </div>
+                <div class="link_bubble" onclick="enter()">
+                    <p><b>Enter</b></p>
+                </div>
+                <div class="click_to_copy" onclick="copy(this)">
+                    <p><i><span style="color: grey;" name="output">Output</span></i></p>
+                </div>
+                <a href="https://algorithmsoup.com" name="water_mark"><p class="water_mark" >Algorithm Soup</p></a>
+            </div>
+            <script>
+                function enter() {
+                    let array_string = document.getElementsByName("array")[0].innerText.replace(/[\r\n]+/gm, " ");
+                    let type = document.getElementsByName("Sorting Type")[0].value;
+                    let output = document.getElementsByName("output")[0];
+                    let array = array_string.split(" ");
+                    
+                    if (type == "A") {
+                        array.sort(function(i, j){
+                            if (Number(i) < Number(j)) {
+                                return -1;
+                            } else if (Number(i) === Number(j)) {
+                                return 0;
+                            } else {
+                                return 1;
+                            }
+                        });
+                    }
+                    else {
+                        array.sort(function(i, j){
+                            if (Number(i) > Number(j)) {
+                                return -1;
+                            } else if (Number(i) === Number(j)) {
+                                return 0;
+                            } else {
+                                return 1;
+                            }
+                        });
+                    }
+                    let buffer = "";
+                    for (let i = 0; i < array.length; i++) {
+                        if (i != (array.length - 1)) {
+                            buffer += array[i] + " ";
+                        }
+                        else {
+                            buffer += array[i];
+                        }
+                    }
+                    output.innerText = buffer;
+                }
+                document.getElementsByName("water_mark")[0].href = window.location.origin;
+            </script>
+
+            <hr></hr>
+
+            <h1>Description</h1>
+            <p>
+                This sorting algorithm depends on the javascript "sort()" function. 
+                Depending on your browser and javascript engine, the speeds and algorthims 
+                might vary. Beware that it will treat all non numerical string as 
+                NaN (Not a number), so there will be no sorting in that case.
+                In general the fastest possible sorting algorithm in a specific language 
+                like javascript will be the build-in one. Often times this will be 
+                because of the increased amounts of optimizations that these function 
+                recieve over costum functions; as a result, if speed is a priority 
+                one should pick this page.
+                <br>
+                Due to the fact that this page is generic sorting there will be a list and brief descriptions of some other sorting algorithms:
+                <ol>
+                    <li>
+                        Quick sort: quick sort is often regarded as the fasted 
+                        algorthim for sorting, it works under the 
+                        divide and conquer paradime.
+                    </li>
+                    <li>
+                        Merge sort: merge sorts works by the divide and conquer 
+                        paradime, it will sort parts individually 
+                        and then it will <b>merge</b> them.
+                    </li>
+                    <li>
+                        Naive sort: this algorthims takes the greatest or smallest 
+                        number and puts it at the start repeatedly, 
+                        its very slow as it works on quadratic time.
+                    </li>
+                    <li>
+                        Bubble sort: this sorting algorthims is one of the slowest,
+                        it consists of comparing 2 indexes at a time, 
+                        it works on quadratic time.
+                    </li>
+                </ol>
+            </p>
+            <div class="click_to_copy" onclick="copy(this)">
+                <p name="iframe"></p>
+            </div>
+            <script>
+                let embbed_text = document.getElementsByName("iframe")[0];
+                embbed_text.innerText += '<iframe src="' + window.location.href + "/embbed" + '"></iframe>';
+            </script>
