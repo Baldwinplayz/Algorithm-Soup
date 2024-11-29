@@ -6,7 +6,8 @@ spell = SpellChecker(language="en")
 all_algorithms = {
     "/sorting/number_sort": {"sort", "number", "numbers", "sorting", "integers", "integer", "ints", "int", "decimals", "decimal", "floats", "float"},
     "/sorting/word_sort": {"sort", "word", "words", "sorting", "dictionary", "dictionaries", "alphabetical", "alphabet", "letters", "letter"},
-    "/sorting/sentence_sort": {"alphabetical", "sort", "sorting", "sentences", "paragraph", "citation", "citing", "alphabet", "sentence", "letters", "letter"}
+    "/sorting/sentence_sort": {"alphabetical", "sort", "sorting", "sentences", "paragraph", "citation", "citing", "alphabet", "sentence", "letters", "letter"},
+    "/sorting/sentence_length_sort": {"length", "lengths", "sort", "sorting", "character", "characters", "letter", "letters", "paragraph", "paragraphs"}
 }
 
 # Loads all the key words as valid words for the spell checking software.
@@ -38,7 +39,6 @@ def search_algorithms(key_words: list):
 
     for key, rank in ranking.items():
         ranking_list[rank].append(key)
-        print(key, rank)
 
     return ranking_list
     

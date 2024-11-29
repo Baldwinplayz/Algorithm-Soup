@@ -46,7 +46,6 @@
                         });
                     }
                     let buffer = "";
-                    console.log(array);
                     for (let i = 0; i < array.length; i++) {
                         if (array[i].replace(/\s+/g, "") == "") {
                             continue;
@@ -67,7 +66,7 @@
 
             <h1>Description</h1>
             <p>
-                This algorithm will organize sentences by separating them by their period. 
+                This algorithm will organize sentences by separating them by their period and space. 
                 Capital letters will be ignored and will not be given priority over others. 
                 Shorter sentences have priority over longer sentences. Further more, the 
                 quality of the sorting process cannot be guaranteed if different scripts 

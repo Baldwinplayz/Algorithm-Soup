@@ -1,11 +1,11 @@
-def home_template(html: str) -> str:
+def home_template(html: str, title: str) -> str:
     return f"""
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Algorithm Soup</title>
+        <title>{title}</title>
         <link rel="stylesheet" type="text/css" href="/static/styles.css">
         <script src="/static/script.js"></script>
         <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
