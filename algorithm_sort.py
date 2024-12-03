@@ -5,9 +5,11 @@ spell = SpellChecker(language="en")
 # Defines all the key words and to wchich route they belong to.
 all_algorithms = {
     "/sorting/number_sort": {"sort", "number", "numbers", "sorting", "integers", "integer", "ints", "int", "decimals", "decimal", "floats", "float"},
-    "/sorting/word_sort": {"sort", "word", "words", "sorting", "dictionary", "dictionaries", "alphabetical", "alphabet", "letters", "letter"},
-    "/sorting/sentence_sort": {"alphabetical", "sort", "sorting", "sentences", "paragraph", "citation", "citing", "alphabet", "sentence", "letters", "letter"},
-    "/sorting/sentence_length_sort": {"length", "lengths", "sort", "sorting", "character", "characters", "letter", "letters", "paragraph", "paragraphs"}
+    "/sorting/word_sort": {"sort", "word", "words", "sorting", "dictionary", "dictionaries", "alphabetical", "alphabet", "letters", "letter", "lexicographic", "lexicographical"},
+    "/sorting/sentence_sort": {"alphabetical", "sort", "sorting", "sentences", "paragraph", "alphabet", "sentence", "letters", "letter", "lexicographic", "lexicographical"},
+    "/sorting/sentence_length_sort": {"length", "lengths", "sort", "sorting", "character", "characters", "letter", "letters", "paragraph", "paragraphs", "lexicographic", "lexicographical"},
+    "/sorting/citation_sort": {"cite", "citing", "citations", "citation", "sort", "sorting", "alphabet", "alphabetical", "lexicographic", "lexicographical", "APA", "MLA", "Harvard", "Chicago"},
+    "/searching/complete_sort": {"search", "searching", "find", "finding", "complete", "linear", "brute", "force", "frequency", "histogram", "count", "counting"}
 }
 
 # Loads all the key words as valid words for the spell checking software.
@@ -18,7 +20,7 @@ def search_algorithms(key_words: list):
     # Corrects the grammar of the user inputed key words
     spell_checked_words = list()
     for word in key_words:
-        spell_checked_words.append(spell.correction(word))
+        spell_checked_words.append(spell.correction(word).lower())
 
     # Creates a dictionary that has the route as the key, and the amount of matches as the item.
     ranking = dict()
@@ -42,4 +44,4 @@ def search_algorithms(key_words: list):
 
     return ranking_list
     
-# print(search_algorithms(input(">").split()))
+print(search_algorithms(input(">").split()))

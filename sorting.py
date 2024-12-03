@@ -44,3 +44,13 @@ def sentence_sort_length():
 @app.route("/sorting/sentence_length_sort/embbed")
 def sentence_sort_length_embbed():
     return render_template(-1, "pages/sorting/sentence_length_sort_embbed.html", "Sentence Length Sort")
+
+#######################################################################################
+
+@app.route("/sorting/citation_sort")
+def citation_sort():
+    return render_template(0, "pages/sorting/citation_sort.html", "Citation Sort")
+
+@app.route("/sorting/citation_sort/embbed")
+def citation_sort_embbed():
+    return render_template(-1, "pages/sorting/citation_sort_embbed.html", "Citation Sort")

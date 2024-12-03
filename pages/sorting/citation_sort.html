@@ -1,0 +1,78 @@
+<div id="program_box">
+    <div class="link_bubble">
+        <p contenteditable="plaintext-only" spellcheck="false" name="array">Research and citation resources -      purdue OWL® -  Purdue University. (n.d.). Purdue University. Retrieved November 30, 2024, from https://owl.purdue.edu/owl/research_and_citation/resources.html
+            Gehr, S. (n.d.). LibGuides: Citation Help: What are Citations? LibGuides at College of the Redwoods. Retrieved November 30, 2024, from https://redwoods.libguides.com/citations
+            Arce, V. (n.d.). Research Guides: Citation Style Guide: What is citation? Research Guides at CUNY Lehman College. Retrieved November 30, 2024, from https://libguides.lehman.edu/citation</p>
+    </div>
+    <div class="link_bubble">
+        <select name="Sorting Type">
+            <option value="A">Alphabetical Order</option>
+        </select>
+    </div>
+    <div class="link_bubble" onclick="enter()">
+        <p><b>Enter</b></p>
+    </div>
+    <div class="click_to_copy" onclick="copy(this)">
+        <p><i><span style="color: grey;" name="output">Output</span></i></p>
+    </div>
+    <a href="https://algorithmsoup.com" name="water_mark"><p class="water_mark" >Algorithm Soup</p></a>
+</div>
+<script>
+    function enter() {
+        let array_string = document.getElementsByName("array")[0].innerText.trim();
+        let type = document.getElementsByName("Sorting Type")[0].value;
+        let output = document.getElementsByName("output")[0];
+        let array = array_string.split("\n");
+        
+        if (type == "A") {
+            array.sort(function(i, j){
+                if (i.toUpperCase().replace(/\s+/g, "") < j.toUpperCase().replace(/\s+/g, "")) {
+                    return -1;
+                } else if (i.toUpperCase().replace(/\s+/g, "") === j.toUpperCase().replace(/\s+/g, "")) {
+                    return 0;
+                } else {
+                    return 1;
+                }
+            });
+        }
+
+        let buffer = "";
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].replace(/\s+/g, "") == "") {
+                continue;
+            }
+            if (i != (array.length - 1)) {
+                buffer += array[i] + "\n\n";
+            }
+            else {
+                buffer += array[i];
+            }
+        }
+        output.innerText = buffer;
+    }
+    document.getElementsByName("water_mark")[0].href = window.location.origin;
+</script>
+
+<hr></hr>
+
+<h1>Description</h1>
+<p>
+    When one is writing a research paper, it is vital for the 
+    citations to be provided; this will permit readers and future 
+    researchers to go more in-depth into the topic. Currently, there 
+    are many different citation formats around the words; 
+    some notable ones are: APA, MLA, Harvard, Chicago, etc. 
+    The APA format is one of the most popular formats in the world; 
+    it was created by the American Psychological Association. 
+    Not only that, but it's also a writing format, and one of the 
+    requirements of the APA format is to have a citation list organized 
+    in alphabetical order to make it easier for the reader to find 
+    specific citations.
+</p>
+<div class="click_to_copy" onclick="copy(this)">
+    <p name="iframe"></p>
+</div>
+<script>
+    let embbed_text = document.getElementsByName("iframe")[0];
+    embbed_text.innerText += '<iframe src="' + window.location.href + "/embbed" + '"></iframe>';
+</script>

@@ -1,0 +1,72 @@
+            <div id="program_box">
+                <div class="link_bubble">
+                        <p contenteditable="plaintext-only" spellcheck="false" name="target">5</p>
+                    </div>
+                <div class="link_bubble">
+                    <p contenteditable="plaintext-only" spellcheck="false" name="array">9 9 9 7 7 7 5 5 5 5 3 3 4 4 1 1 0 0 A A B C</p>
+                </div>
+                <div class="link_bubble">
+                    <select name="Sorting Type">
+                        <option value="A">Target is element of array</option>
+                        <option value="B">Recurrences of target in array</option>
+                    </select>
+                </div>
+                <div class="link_bubble" onclick="enter()">
+                    <p><b>Enter</b></p>
+                </div>
+                <div class="click_to_copy" onclick="copy(this)">
+                    <p><i><span style="color: grey;" name="output">Output</span></i></p>
+                </div>
+                <a href="https://algorithmsoup.com" name="water_mark"><p class="water_mark" >Algorithm Soup</p></a>
+            </div>
+            <script>
+                function enter() {
+                    let target = document.getElementsByName("target")[0].innerText.trim();
+                    let array_string = document.getElementsByName("array")[0].innerText.replace(/[\r\n]+/gm, " ");
+                    let type = document.getElementsByName("Sorting Type")[0].value;
+                    let output = document.getElementsByName("output")[0];
+                    let array = array_string.split(" ");
+
+                    if (type == "A") {
+                        let bool = "false";
+                        for (let i = 0; i < array.length; i++) {
+                            if (array[i] == target) {
+                                bool = "true";
+                                break;
+                            }
+                        }
+                        output.innerText = bool;
+                    }
+                    else {
+                        let count = 0;
+                        for (let i = 0; i < array.length; i++) {
+                            if (array[i] == target) {
+                                count++;
+                            }
+                        }
+                        output.innerText = count;
+                    }
+                }
+                document.getElementsByName("water_mark")[0].href = window.location.origin;
+            </script>
+
+            <hr></hr>
+
+            <h1>Description</h1>
+            <p>
+                This is a linear sorting algorithm; in other words, this 
+                algorithm operates on O(N) time. It will iterate through 
+                every item in the array to look for matches; all of these 
+                items are treated as strings, which means that you will 
+                not get matches for numerically equal numbers if they are 
+                written differently. This algorithm can be used to count 
+                the frequency of certain words in a text, although a 
+                histogram would be better for this.
+            </p>
+            <div class="click_to_copy" onclick="copy(this)">
+                <p name="iframe"></p>
+            </div>
+            <script>
+                let embbed_text = document.getElementsByName("iframe")[0];
+                embbed_text.innerText += '<iframe src="' + window.location.href + "/embbed" + '"></iframe>';
+            </script>

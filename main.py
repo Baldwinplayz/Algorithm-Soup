@@ -4,6 +4,7 @@ from render_template import render_template
 app = Flask(__name__)
 
 import sorting
+import searching
 
 @app.route("/")
 def index():
