@@ -11,4 +11,4 @@ def index():
     return render_template(0, "pages/index.html", "Algorithm Soup")
 
 if "__main__" == __name__:
-    app.run(host="127.0.0.1", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=80, debug=True)

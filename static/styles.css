@@ -74,7 +74,7 @@ hr {
 }
 .algorithm_categories {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 0px;
 }
 .algorithm_links {
@@ -100,7 +100,7 @@ hr {
     border-radius: 8px;
     margin: 16px;
     padding: 4px;
-    word-wrap: normal;
+    overflow-wrap: break-word;
 }
 .click_to_copy:hover {
     background-color: #0b0c0d;
