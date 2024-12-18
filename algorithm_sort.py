@@ -9,7 +9,8 @@ all_algorithms = {
     "/sorting/sentence_sort": {"alphabetical", "sort", "sorting", "sentences", "paragraph", "alphabet", "sentence", "letters", "letter", "lexicographic", "lexicographical"},
     "/sorting/sentence_length_sort": {"length", "lengths", "sort", "sorting", "character", "characters", "letter", "letters", "paragraph", "paragraphs", "lexicographic", "lexicographical"},
     "/sorting/citation_sort": {"cite", "citing", "citations", "citation", "sort", "sorting", "alphabet", "alphabetical", "lexicographic", "lexicographical", "APA", "MLA", "Harvard", "Chicago"},
-    "/searching/complete_sort": {"search", "searching", "find", "finding", "complete", "linear", "brute", "force", "frequency", "histogram", "count", "counting"}
+    "/searching/complete_sort": {"search", "searching", "find", "finding", "complete", "linear", "brute", "force", "frequency", "histogram", "count", "counting"},
+    "/searching/binary_search": {"search", "searching", "find", "finding", "binary", "divide", "conquer", "logarithmic", "logarithm", "fast", "fastest"}
 }
 
 # Loads all the key words as valid words for the spell checking software.

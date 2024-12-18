@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="/static/styles.css">
+<script src="/static/script.js"></script>
+<div id="program_box">
+    <div class="link_bubble">
+            <p contenteditable="plaintext-only" spellcheck="false" name="target">5</p>
+        </div>
+    <div class="link_bubble">
+        <p contenteditable="plaintext-only" spellcheck="false" name="array">1 2 3 4 5 6 7 8 9 A B C D E F</p>
+    </div>
+    <div class="link_bubble">
+        <select name="Sorting Type">
+            <option value="A">Target is element of array</option>
+        </select>
+    </div>
+    <div class="link_bubble" onclick="enter()">
+        <p><b>Enter</b></p>
+    </div>
+    <div class="click_to_copy" onclick="copy(this)">
+        <p><i><span style="color: grey;" name="output">Output</span></i></p>
+    </div>
+    <a href="https://algorithmsoup.com" name="water_mark"><p class="water_mark" >Algorithm Soup</p></a>
+</div>
+<script>
+    function enter() {
+        let target = document.getElementsByName("target")[0].innerText.trim();
+        let array_string = document.getElementsByName("array")[0].innerText.replace(/[\r\n]+/gm, " ");
+        let type = document.getElementsByName("Sorting Type")[0].value;
+        let output = document.getElementsByName("output")[0];
+        let array = array_string.split(" ");
+
+        if (type == "A") {
+            let bool = "false";
+            let low = 0;
+            let high = array.length - 1;
+            while (low <= high) {
+                let mid = Math.floor((high + low) / 2);
+                
+                if (array[mid] == target) {
+                    bool = "true";
+                    break;
+                }
+                else if (array[mid] < target) {
+                    low = mid + 1;
+                }
+                else {
+                    high = mid - 1;
+                }
+            }
+            output.innerText = bool;
+        }
+    }
+    document.getElementsByName("water_mark")[0].href = window.location.origin;
+</script>
