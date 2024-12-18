@@ -14,3 +14,13 @@ def complete_search():
 @app.route("/searching/complete_search/embbed")
 def complete_search_embbed():
     return render_template(-1, "pages/searching/complete_search_embbed.html", "Complete Search")
+
+#######################################################################################
+
+@app.route("/searching/binary_search")
+def binary_search():
+    return render_template(0, "pages/searching/binary_search.html", "Binary Search")
+
+@app.route("/searching/binary_search/embbed")
+def binary_search_embbed():
+    return render_template(-1, "pages/searching/binary_search_embbed.html", "Binary Search")

@@ -1,0 +1,71 @@
+            <div id="program_box">
+                <div class="link_bubble">
+                        <p contenteditable="plaintext-only" spellcheck="false" name="target">5</p>
+                    </div>
+                <div class="link_bubble">
+                    <p contenteditable="plaintext-only" spellcheck="false" name="array">1 2 3 4 5 6 7 8 9 A B C D E F</p>
+                </div>
+                <div class="link_bubble">
+                    <select name="Sorting Type">
+                        <option value="A">Target is element of array</option>
+                    </select>
+                </div>
+                <div class="link_bubble" onclick="enter()">
+                    <p><b>Enter</b></p>
+                </div>
+                <div class="click_to_copy" onclick="copy(this)">
+                    <p><i><span style="color: grey;" name="output">Output</span></i></p>
+                </div>
+                <a href="https://algorithmsoup.com" name="water_mark"><p class="water_mark" >Algorithm Soup</p></a>
+            </div>
+            <script>
+                function enter() {
+                    let target = document.getElementsByName("target")[0].innerText.trim();
+                    let array_string = document.getElementsByName("array")[0].innerText.replace(/[\r\n]+/gm, " ");
+                    let type = document.getElementsByName("Sorting Type")[0].value;
+                    let output = document.getElementsByName("output")[0];
+                    let array = array_string.split(" ");
+
+                    if (type == "A") {
+                        let bool = "false";
+                        let low = 0;
+                        let high = array.length - 1;
+                        while (low <= high) {
+                            let mid = Math.floor((high + low) / 2);
+                            
+                            if (array[mid] == target) {
+                                bool = "true";
+                                break;
+                            }
+                            else if (array[mid] < target) {
+                                low = mid + 1;
+                            }
+                            else {
+                                high = mid - 1;
+                            }
+                        }
+                        output.innerText = bool;
+                    }
+                }
+                document.getElementsByName("water_mark")[0].href = window.location.origin;
+            </script>
+
+            <hr></hr>
+
+            <h1>Description</h1>
+            <p>
+                This algorithm employs the most efficient searching algorithm known: binary search. 
+                This algorithm will take a sorted array and use that to its advantage to rule out 
+                entire halves of said array; for example, if one is looking for a 5 in the array, 
+                and it sees that the number in the center is greater than 5, one will know that if 
+                the 5 is present, it must be in the first half. Due to its divide and conquer 
+                paradime it runs on O(log n) time. To make this work, you need to sort the array 
+                in UNICODE order that can be found using the search bar.
+            </p>
+            <div class="click_to_copy" onclick="copy(this)">
+                <p name="iframe"></p>
+            </div>
+            <script>
+                let embbed_text = document.getElementsByName("iframe")[0];
+                embbed_text.innerText += '<iframe src="' + window.location.href + "/embbed" + '"></iframe>';
+            </script>
